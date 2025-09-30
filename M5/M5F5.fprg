@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-29 07:46:51 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTNVQlFVQzY7MjAyNS0wOS0yOTswNzozODowMCBQTTszMzU1"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTNVQlFVQzY7MjAyNS0wOS0yOTswNzo0Njo1MSBQTTsxOzM0Njg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="dependents" type="Integer" array="False" size=""/>
+            <declare name="gincome" type="Real" array="False" size=""/>
+            <declare name="adjgross" type="Real" array="False" size=""/>
+            <declare name="taxr" type="Real" array="False" size=""/>
+            <declare name="intax" type="Real" array="False" size=""/>
+            <input variable="lastname"/>
+            <input variable="dependents"/>
+            <input variable="gincome"/>
+            <assign variable="adjgross" expression="gincome - (dependents * 12000)"/>
+            <if expression="adjgross &gt; 50000">
+                <then>
+                    <assign variable="taxr" expression="0.20"/>
+                </then>
+                <else>
+                    <assign variable="taxr" expression="0.10"/>
+                </else>
+            </if>
+            <assign variable="intax" expression="adjgross * taxr"/>
+            <if expression="intax &lt; 0">
+                <then>
+                    <assign variable="intax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Last name:&quot; &amp;lastname" newline="True"/>
+            <output expression="&quot;Gross income:&quot; &amp;gincome" newline="True"/>
+            <output expression="&quot;Number of dependents:&quot; &amp;dependents" newline="True"/>
+            <output expression="&quot;Adjusted gross income: $&quot; &amp;adjgross" newline="True"/>
+            <output expression="&quot;Income tax: $&quot; &amp;intax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
