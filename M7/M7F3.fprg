@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-05 11:31:29 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTVCRVJQTU07MjAyNS0xMC0wNTsxMToxNTo1NCBQTTszMzU1"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTVCRVJQTU07MjAyNS0xMC0wNTsxMTozMToyOSBQTTsyOzM0NjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="answer" type="String" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <declare name="exam1" type="Real" array="False" size=""/>
+            <declare name="exam2" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <declare name="lname" type="String" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <input variable="answer"/>
+            <while expression="answer == &quot;Yes&quot;">
+                <input variable="lname"/>
+                <input variable="exam1"/>
+                <input variable="exam2"/>
+                <assign variable="avg" expression="(exam1 + exam2) / 2"/>
+                <output expression="lname" newline="True"/>
+                <output expression="avg" newline="True"/>
+                <assign variable="total" expression="total + 1"/>
+                <input variable="answer"/>
+                <output expression="total" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
