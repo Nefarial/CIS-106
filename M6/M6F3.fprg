@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6F3"/>
+        <attribute name="authors" value="vedra"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-06 07:28:42 PM"/>
+        <attribute name="created" value="dmVkcmE7U0hJTlk7MjAyNS0xMS0wNjswNjozMjo0OSBQTTsyMjEw"/>
+        <attribute name="edited" value="dmVkcmE7U0hJTlk7MjAyNS0xMS0wNjswNzoyODo0MiBQTTsxOzIzMTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principal" type="Real" array="False" size=""/>
+            <declare name="years" type="Integer" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="finterest" type="Real" array="False" size=""/>
+            <input variable="principal"/>
+            <input variable="years"/>
+            <if expression="principal &gt; 100000 AND years == 5">
+                <then>
+                    <assign variable="rate" expression=".06"/>
+                </then>
+                <else>
+                    <if expression="principal &gt;= 50000 AND principal &lt;= 100000 AND years == 10">
+                        <then>
+                            <assign variable="rate" expression="0.04"/>
+                        </then>
+                        <else>
+                            <assign variable="rate" expression="0.02"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="finterest" expression="principal * rate"/>
+            <output expression="&quot;Principal: $&quot; &amp; principal" newline="True"/>
+            <output expression="&quot;Interest rate: &quot; &amp; (rate * 100) &amp; &quot;%&quot;" newline="True"/>
+            <output expression="&quot;First-year interest: $&quot; &amp; finterest" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6F2"/>
+        <attribute name="authors" value="vedra"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-06 06:30:21 PM"/>
+        <attribute name="created" value="dmVkcmE7U0hJTlk7MjAyNS0xMS0wNjswNjoyNDowNyBQTTsyMjA1"/>
+        <attribute name="edited" value="dmVkcmE7U0hJTlk7MjAyNS0xMS0wNjswNjozMDoyMSBQTTsxOzIzMDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="part" type="String" array="False" size=""/>
+            <declare name="qty" type="Integer" array="False" size=""/>
+            <declare name="ucost" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="part"/>
+            <input variable="qty"/>
+            <if expression="part == &quot;10&quot; OR part == &quot;55&quot;">
+                <then>
+                    <assign variable="ucost" expression="1.00"/>
+                </then>
+                <else>
+                    <if expression="part == &quot;99&quot;">
+                        <then>
+                            <assign variable="ucost" expression="2.00"/>
+                        </then>
+                        <else>
+                            <if expression="part == &quot;80&quot; OR part == &quot;70&quot; OR part == &quot;40&quot;">
+                                <then>
+                                    <assign variable="ucost" expression="3.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="ucost" expression="5.00"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="qty * ucost"/>
+            <output expression="&quot;Part: &quot; &amp;part" newline="True"/>
+            <output expression="&quot;Unit cost: $&quot; &amp;ucost" newline="True"/>
+            <output expression="&quot;Total cost: $&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
