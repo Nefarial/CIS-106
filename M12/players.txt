@@ -1,0 +1,10 @@
+Adams 0.278
+Baker 0.310
+Clark 0.255
+Davis 0.295
+Evans 0.240
+Foster 0.300
+Green 0.265
+Harris 0.250
+Irwin 0.285
+Jones 0.275

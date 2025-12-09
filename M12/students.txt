@@ -1,0 +1,10 @@
+Adams 88
+Baker 92
+Clark 75
+Davis 96
+Evans 84
+Foster 79
+Green 90
+Harris 68
+Irwin 95
+Jones 87
